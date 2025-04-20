@@ -18,7 +18,7 @@ You should also set this in under `language_modeling/webtext.py` as a `cache_dir
 
 The main current commands to run are under `pretrain.sh`. You can just run this shell script and it should start automatically. These commands will all use DDP to run everything across 2 GPUs. But, the code isn't very fast even so I think you'll want to use as many as you can. You can modify the number of GPUs to all the GPUs -- I have no idea how many there will be -- but make sure to divide the global batch size -- 256 -- by the number of GPUs. So with 4 GPUs, `--batch_size` should be set to 64. 
 
-The first time the code is run, it will reload the dataset for OpenWebText, chunk the data, and save this as .arrow files to disk. Afterwards, it won't do this again unless you specify. 
+The first time the code is run, it will reload the dataset for OpenWebText, chunk the data, and save this as .arrow files to disk. Afterwards, it won't do this again unless you specify using `--reload_dataset` Run this flag if you change the context length or need to change anything about the data. 
 
 If any argument in `pretrain.sh` doesn't make sense, let me know.
 
