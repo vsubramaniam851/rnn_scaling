@@ -7,7 +7,7 @@ def parse_args():
     
     parser.add_argument('--eval', action = 'store_true', dest = 'eval')
     parser.add_argument('--student_model', action = 'store', type = str, dest = 'student_model', default = 'RNN', choices = ['LSTM', 'RNN', 'Transformer'])
-    parser.add_argument('--context_length', action = 'store', type = int, dest = 'context_length', default = 128)
+    parser.add_argument('--context_length', action = 'store', type = int, dest = 'context_length', default = 200)
     parser.add_argument('--reload_dataset', action = 'store_true', dest = 'reload_dataset')
 
     parser.add_argument('--num_workers', action = 'store', type = int, dest = 'num_workers', default = 24)
